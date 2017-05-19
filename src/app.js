@@ -315,9 +315,16 @@ class FacebookBot {
                     originalRequest: {
                         data: event,
                         source: "facebook"
-                    }
+                    },
+                    contexts: [
+                    {
+                        name: "generic",
+                        parameters: {
+                            facebook_user: userName
+                        }
+                    }]
                 });
-
+            
             this.doApiAiRequest(apiaiRequest, sender);
         }
     }
